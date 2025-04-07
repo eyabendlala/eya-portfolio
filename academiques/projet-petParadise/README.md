@@ -46,7 +46,7 @@ Ce projet a été réalisé en collaboration avec 3 autres membres de l’équip
 - **Module de jeux** : Ajout de mini-jeux (comme des puzzles) pour divertir les utilisateurs pendant leur navigation sur la plateforme et promouvoir l'engagement.
 
 
-## 📸 Screenshots
+## 📸 Interfaces
 
 Voici quelques captures d'écran de l'interface de l'application :
 
