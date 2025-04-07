@@ -51,11 +51,11 @@ Ce projet a été réalisé en collaboration avec 3 autres membres de l’équip
 Voici quelques captures d'écran de l'interface de l'application :
 
 ![Interface principale](./images/interface_principale.PNG)
-![Gestion des animaux](./images/gestion_animaux.png)
-![Module RH](./images/module_rh.png)
-![Gestion Equipement](./images/gestion_equipement.png)
-![Gestion Evenement](./images/gestion_evenement.png)
-![Gestion Abonnement](./images/gestion_abonnement.png)
-![Gestion settings](./images/gestion_settings.png)
+![Gestion des animaux](./images/gestion_animaux.PNG)
+![Module RH](./images/module_rh.PNG)
+![Gestion Equipement](./images/gestion_equipement.PNG)
+![Gestion Evenement](./images/gestion_evenement.PNG)
+![Gestion Abonnement](./images/gestion_abonnement.PNG)
+![Gestion settings](./images/gestion_settings.PNG)
 
 
