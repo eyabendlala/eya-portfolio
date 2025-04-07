@@ -1,0 +1,38 @@
+{% extends 'front.office.html.twig' %}
+
+{% block title %}Edit Reclamation{% endblock %}
+
+{% block body %}
+   
+                  <div class="alime-contact-form mt-50" >
+                      
+                  
+                                <div class="col-12 col-md-6" style="margin: 0 auto;" >
+        
+                                  <div class="team-content-area text-left mb-30 wow fadeInUp" data-wow-delay="300ms">
+                        {% for message in app.flashes('success') %}
+            <div class="alert alert-success" >
+                {{ message }}
+            </div>
+             {% endfor %}
+                               <h4 class="mb-30">Modifier une Reclamation</h4>
+  {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+                                   {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+
+    
+    {{ form_widget(form) }}
+
+
+{{ form_end(form) }}
+   
+
+    <a href="{{ path('reclamation_index') }}">liste des Reclamations</a>
+
+   </div>
+                                    </div>
+</div>
+{% endblock %}
+{% block javascript %}
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=qB7aQLES"></script>
+{% endblock %}

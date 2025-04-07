@@ -1,0 +1,39 @@
+{% extends 'back.html.twig' %}
+
+{% block body %}
+<div class="row ">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Ajouter Reclamation</h4>
+                    <div class="table-responsive">
+                     <div class="team-content-area text-left  wow fadeInUp"  >
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success" >
+                {{ message }}
+            </div>
+             {% endfor %}
+                      <table class="table">
+                                {% form_theme form 'bootstrap_4_layout.html.twig' %}
+  {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+
+    
+    {{ form_widget(form) }}
+
+
+{{ form_end(form) }}
+     
+                                <a href="{{ path('reclamation_index_back') }}">Liste des Reclamation</a>
+                                </div>
+                                    </div>
+</div>
+    </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+{% endblock %}

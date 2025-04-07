@@ -1,0 +1,37 @@
+
+    <h1>User</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ user.Nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ user.Prenom }}</td>
+            </tr>
+            <tr>
+                <th>CIN</th>
+                <td>{{ user.CIN }}</td>
+            </tr>
+            <tr>
+                <th>Role</th>
+                <td>{{ user.Role }}</td>
+            </tr>
+            <tr>
+                <th>Access</th>
+                <td>{{ user.Access }}</td>
+            </tr>
+             <tr>
+                <th>Date naissance</th>
+                <td>{{ user.datenaissance|date('Y-m-d')}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+   

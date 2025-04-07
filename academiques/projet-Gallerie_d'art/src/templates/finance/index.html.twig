@@ -1,0 +1,74 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Finance index{% endblock %}
+
+{% block body %}
+    <div class="row ">
+    
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success" >
+                {{ message }}
+            </div>
+        {% endfor %}
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                  
+                    <h4 class="card-title">Liste des Bilans financiére</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+    
+        <div class="col-md-6 mb-5 mb-md-0" style="margin: 0 auto;" >
+                
+
+     <table class="table table table-bordered table-striped table-primary  table-hover "> 
+        <thead>
+            <tr>
+                <th>Id</th>
+                 <th>Totale évenements</th>
+                 <th>Totale Stock </th>
+                 <th>Totale Dons</th>
+                <th>Totale</th>
+                <th>Date</th>
+               <th>Statistique</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for finance in finances %}
+            <tr>
+                <td>{{ finance.id }}</td>
+                <td>{{ finance.evenement.billet }}</td>
+                   <td>{{ finance.commande.total }}</td>
+                   <td>{{ finance.dons.montant }}</td>
+                <td>{{ finance.somme }}</td>
+                <td>{{ finance.date ? finance.date|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('stat')}}">Statistique</a>
+                                   </td>
+                <td>
+                    <a href="{{ path('finance_show', {'id': finance.id}) }}">Afficher</a>
+                    <a href="{{ path('finance_edit', {'id': finance.id}) }}">Modifier</a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">0 bilan</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('finance_new') }}">Ajouter un bilan finannciére</a>
+        <a href="{{ path('finance_liste') }}">Imprimer un bilan finannciére</a>
+    <a href="{{ path('stat') }}">Statistique</a>
+    </div>
+       </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+{% endblock %}

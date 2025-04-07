@@ -1,0 +1,36 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Dons index{% endblock %}
+
+{% block body %}
+    <h1>Dons index</h1>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Num_carte</th>
+                <th>Montant</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for don in dons %}
+            <tr>
+                <td>{{ don.id }}</td>
+                <td>{{ don.numCarte }}</td>
+                <td>{{ don.montant }}</td>
+                <td>
+                    <a href="{{ path('dons_show_back', {'id': don.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('dons_new') }}">Create new</a>
+{% endblock %}

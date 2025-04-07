@@ -1,0 +1,63 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Calender index{% endblock %}
+
+{% block body %}      
+     
+
+        
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success" >
+                {{ message }}
+            </div>
+        {% endfor %}
+         <h4 class="card-title">Mes Plans</h4>
+                
+
+                     
+        <div style="margin: 0 auto;" >
+     <table class="table table-bordered table-striped table-primary  table-hover "> 
+   
+      
+        <tbody>
+            <tr>
+                
+                <th>Title</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Description</th>
+           
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for calender in calenders %}
+            <tr>
+               
+                <td>{{ calender.title }}</td>
+                <td>{{ calender.start ? calender.start|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ calender.end ? calender.end|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ calender.description }}</td>
+                
+              
+                <td>
+                    <a href="{{ path('calender_show_back', {'id': calender.id}) }}">Afficher</a>
+                   
+                    <a href="{{ path('calender_edit_back', {'id': calender.id}) }}">Modifier</a>
+               
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no plan</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('calender_new_back') }}">Ajouter un plan</a>
+    <a href="{{ path('fullback' )}}">Calender</a>
+
+ 
+{% endblock %}

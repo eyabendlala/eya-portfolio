@@ -1,0 +1,16 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Edit Evenement{% endblock %}
+
+{% block body %}
+<section id="user" class="user" style="color: white">
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    <h1>Edit Evenement</h1>
+
+    {{ include('evenement/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('evenement_index') }}">back to list</a>
+
+    {{ include('evenement/_delete_form.html.twig') }}
+    </section><!-- End Contact Section -->
+{% endblock %}

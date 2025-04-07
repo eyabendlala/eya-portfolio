@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Finance2 index{% endblock %}
+
+{% block body %}
+    <h1>Finance2 index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Dons</th>
+                <th>Evenement</th>
+                <th>Commande</th>
+                <th>Somme</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for finance2 in finance2s %}
+            <tr>
+                <td>{{ finance2.id }}</td>
+                <td>{{ finance2.dons }}</td>
+                <td>{{ finance2.evenement }}</td>
+                <td>{{ finance2.commande }}</td>
+                <td>{{ finance2.somme }}</td>
+                <td>{{ finance2.date }}</td>
+                <td>
+                    <a href="{{ path('finance2_show', {'id': finance2.id}) }}">show</a>
+                    <a href="{{ path('finance2_edit', {'id': finance2.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('finance2_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Collaborateur{% endblock %}
+
+{% block body %}
+<section id="user" class="user" style="color: white">
+    <h1>Collaborateur</h1>
+    
+
+    <table class="table" style="color: white">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomCollaborateur</th>
+                <th>PrenomCollaborateur</th>
+                <th>Role</th>
+                <th>NumeroTel</th>
+                <th>Entreprise</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for collaborateur in collaborateurs %}
+            <tr>
+                <td>{{ collaborateur.id }}</td>
+                <td>{{ collaborateur.NomCollaborateur }}</td>
+                <td>{{ collaborateur.PrenomCollaborateur }}</td>
+                <td>{{ collaborateur.Role }}</td>
+                <td>{{ collaborateur.NumeroTel }}</td>
+                <td>{{ collaborateur.Entreprise }}</td>
+                <td>
+                    <a href="{{ path('collaborateur_show', {'id': collaborateur.id}) }}">Afficher les détails</a>
+                    <a href="{{ path('collaborateur_edit', {'id': collaborateur.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<a class=" btn btn-success " href="{{ path('collaborateur_new') }}">Ajouter un nouveau collaborateur</a>
+<a class="btn btn-success  " href="{{ path('stats') }}">Les Staistiques</a>
+</section><!-- End Contact Section -->   
+{% endblock %}

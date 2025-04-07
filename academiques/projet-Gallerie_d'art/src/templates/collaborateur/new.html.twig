@@ -1,0 +1,14 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Nouveau Collaborateur{% endblock %}
+
+{% block body %}
+<section id="user" class="user" style="color: white">
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    <h1>Ajouter un nouveau Collaborateur</h1>
+
+    {{ include('collaborateur/_form.html.twig') }}
+
+    <a href="{{ path('collaborateur_index') }}">Retouner vers la liste</a>
+    </section><!-- End Contact Section -->   
+{% endblock %}

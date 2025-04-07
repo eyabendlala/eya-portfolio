@@ -1,0 +1,34 @@
+{% extends 'front.office.html.twig' %}
+
+
+{% block title %}New Calender{% endblock %}
+
+{% block body %}
+    
+                  <div class="alime-contact-form mt-50" >
+                      
+                  
+                                <div class="col-12 col-md-6" style="margin: 0 auto;" >
+                                  <div class="team-content-area text-left mb-30 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="member-thumb">
+                            <img src="{{asset('front-office/img/bg-img/calender.png')}}" alt="">
+                        </div>
+                               <h4 class="mb-30">Ajouter un Plan</h4>
+                                {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+                                 {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+
+    
+    {{ form_widget(form) }}
+
+
+{{ form_end(form) }}
+     
+
+    <a href="{{ path('calender_index') }}">Mes Plans</a>
+    <a href="{{ path('full' )}}">Calender</a>
+     </div>
+                                    </div>
+</div>
+   
+{% endblock %}

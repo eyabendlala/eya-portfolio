@@ -1,0 +1,51 @@
+{% extends 'front.office.html.twig' %}
+
+{% block title %}Visite index{% endblock %}
+{% block body %}
+    <h1>Visite index</h1>
+
+    <table class="table table-borderd">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Disponibilite</th>
+                <th>Num_carte</th>
+                <th>Montant</th>
+                <th>Sexe</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for visite in visites %}
+            <tr>
+                <td>{{ visite.id }}</td>
+                <td>{{ visite.date ? visite.date|date('Y-m-d') : '' }}</td>
+                <td>{{ visite.description }}</td>
+                <td>{{ visite.disponibilite ? 'Yes' : 'No' }}</td>
+                <td>{{ visite.numCarte }}</td>
+                <td>{{ visite.montant }}</td>
+                <td>{{ visite.sexe }}</td>
+                <td>
+                    <a href="{{ path('visite_show', {'id': visite.id}) }}">show</a>
+                    <a href="{{ path('visite_edit', {'id': visite.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('visite_new') }}">Create new</a>
+    <a href="{{ path('main') }}">Calendar</a>
+    <nav aria-label="Page navigation example">
+    <ul class="pagination pagination-template d-flex justify-content-center">
+
+    {{ knp_pagination_render(visites) }}
+     </ul>
+</nav>
+{% endblock %}

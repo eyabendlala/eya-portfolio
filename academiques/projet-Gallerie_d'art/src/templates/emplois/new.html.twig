@@ -1,0 +1,15 @@
+{% extends 'back.html.twig' %}
+{% block title %}New Emplois{% endblock %}
+
+{% block body %}
+<section id="user" class="user" style="color: white">
+ {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}   
+        <div class="content-wrapper">
+    <h1>Create new Emplois</h1>
+
+    {{ include('emplois/_form.html.twig') }}
+
+    <a href="{{ path('emplois_index') }}">back to list</a>
+    </div>
+</section><!-- End Contact Section -->
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'front.office.html.twig' %}
+
+{% block title %}Reponse index{% endblock %}
+
+{% block body %}
+    <div class="alime-contact-form mt-50" >
+    <div class="col-12 col-md-6" style="margin: 0 auto;" >
+        <div class="team-content-area text-left  wow fadeInUp"  >
+     <a class="btn btn-primary"  href="{{path('Trieasc') }}">Trier par Réponse en ordre croissant</a>
+    
+     <a class="btn btn-primary" href="{{path('Triedsc') }}">Trier par Réponse en ordre décroissant</a>
+
+<br><br>
+         <h4 class="card-title">Reponse Reclamations</h4>
+                
+
+     <table class="table table-bordered table-striped table-hover "> 
+        <thead>
+            <tr>
+                
+                <th>Reponse</th>
+                <th>Reclamation</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reponse in reponses %}
+            <tr>
+                <td>{{ reponse.rep }}</td>
+                <td>{{ reponse.reclamation.msg }}</td>
+               
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+      </div> </div>
+</div>
+{% endblock %}

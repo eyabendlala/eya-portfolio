@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>Liste Dons Json</h1>
+    
+    {{ dons|json_encode() }}
+{% endblock %}

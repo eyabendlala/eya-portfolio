@@ -1,0 +1,16 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Ajouter un nouveau évènement{% endblock %}
+
+{% block body %}
+<section id="user" class="user" style="color: white">
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        
+    <h1>Ajouter un nouveau évènement</h1>
+
+    {{ include('evenement/_form.html.twig') }}
+
+    <a href="{{ path('evenement_index') }}">Retourner vers La liste des évènements</a>
+ </section><!-- End Contact Section -->  
+{% endblock %}
+

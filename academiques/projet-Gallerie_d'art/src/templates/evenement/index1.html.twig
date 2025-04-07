@@ -1,0 +1,53 @@
+{% extends 'front.office.html.twig' %}
+
+{% block title %}Evenement index{% endblock %}
+
+{% block body %}
+ 
+    <h1>Evenement</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>NomEvenement</th>
+                <th>Description</th>
+                <th>NombreDeParticipants</th>
+                <th>QrCode</th>
+                <th>Billet</th>
+                <th>DateDeEvenement</th>
+                <th>longitude</th>
+                <th>latitude</th>
+                <th>Action</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for evenement in evenements %}
+            <tr>
+                
+                <td>{{ evenement.NomEvenement }}</td>
+                <td>{{ evenement.Description }}</td>
+                <td>{{ evenement.NombreDeParticipants }}</td>
+                <td><img src="{{ asset('Uploads/image/' ~evenement.QrCode) }}"style="width: 100px"></td>
+                <td>{{ evenement.Billet }}</td>
+                <td>{{ evenement.DateDeEvenement ? evenement.DateDeEvenement|date('Y-m-d') : '' }}</td>
+                <td>{{ evenement.longitude }}</td>
+                <td>{{ evenement.latitude }}</td>
+               <td>
+               
+                    <a href="{{ path('maps', {'id': evenement.id}) }}">Voir le lieu sur Google Maps</a>
+                 </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+
+
+{% endblock %}

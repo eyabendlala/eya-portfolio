@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %} {% block title %}Faire un Don{% endblock %}
+ {% block body %}
+ {% for message in app.flashes('message')%}
+     <div class="alert alert-success" role="alert">
+         {{ message }}
+       </div>
+       {% endfor %}
+<h1>Envoyer votre don</h1>
+ {{ include( 'dons/_form.html.twig') }} 
+ <a href="{{ path('dons_new') }}"></a>
+    {% endblock %}

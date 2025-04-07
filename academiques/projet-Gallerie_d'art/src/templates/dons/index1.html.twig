@@ -1,0 +1,52 @@
+{% extends 'back.html.twig' %} {% block title %}Dons{% endblock %} {% block body %}
+<div class="row ">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Liste des Dons</h4>
+                <div class="table-responsive">
+                    <table class="table">
+
+                        <div class="col-md-6 mb-5 mb-md-0" style="margin: 0 auto;">
+                            <div class="btn-toolbar" role="toolbar" aria-label="Programmatic control">
+                                <div class="btn-group btn-group-sm" aria-label="Set Select2 option">
+                                    <a href="{{ path('tri') }}"> <input class="js-programmatic-set-val btn btn-outline-primary mr-1 mb-1" type="button" value="Tri descendant"></a>
+                                    <a href="{{ path('tri1') }}"> <input class="js-programmatic-set-val btn btn-outline-primary mr-1 mb-1" type="button" value="Tri ascendant"></a>
+
+                                </div>
+                            </div>
+
+
+            <table class="table table table-bordered table-striped table-primary  table-hover ">
+        <div><form method="post" action="{{ path('Recherche2') }}">
+        <label>Recherche</label>
+        <input type="text"  name="search"><input type="submit"  class="btn btn-success" value="Recherche ">
+    </form>
+</div>
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Num_carte</th>
+                                        <th>Montant</th>
+                                        <th>actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for don in dons %}
+                                    <tr>
+                                        <td>{{ don.id }}</td>
+                                        <td>{{ don.numCarte }}</td>
+                                        <td>{{ don.montant }}</td>
+                                        <td>
+                                            <a href="{{ path('dons_show', {'id': don.id}) }}">show</a>
+
+                                        </td>
+                                    </tr>
+                                    {% else %}
+                                    <tr>
+                                        <td colspan="4">no records found</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <a href="{{ path('dons_list') }}">Imprimer</a> {% endblock %}

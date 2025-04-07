@@ -1,0 +1,23 @@
+{% block body %}
+<h1 align="center">Liste des Réservations</h1>
+<hr>
+<table class="table table table-bordered table-striped table-primary  table-hover ">
+    <thead>
+        <tr>
+            <th>Id</th>
+        </tr>
+    </thead>
+    <tbody>
+       {% for reservation in reservations %}
+            <tr>
+                <td>{{ reservation.id }}</td>
+                
+
+                <td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

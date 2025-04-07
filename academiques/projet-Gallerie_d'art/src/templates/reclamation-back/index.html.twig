@@ -1,0 +1,133 @@
+{% extends 'back.html.twig' %}
+{% block title %}Reclamation index{% endblock %}
+
+{% block body %}
+<ul class="navbar-nav navbar-nav-right">
+<li class="nav-item dropdown d-none d-lg-block">
+<a href="{{path('fullback')}}" class="btn create-new-button" style=" background-color: #8064A2 !important;">+ Planning</a>
+</li>
+</ul>
+<div class="row ">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                   <h3 class="card-title" >Recherche Reclamation</h3>
+                 <div class="sidebar-search">
+
+                <div class="input-group custom-search-form">
+
+                    <input type="text" id="search" class="form-control" placeholder="Search here">
+                </div>
+ <br>
+                    <h4 class="card-title">Liste des Reclamations</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+    
+        <div class="col-md-6 mb-5 mb-md-0" style="margin: 0 auto;" >
+                   {% for message in app.flashes('success') %}
+            <div class="alert alert-success" >
+                {{ message }}
+            </div>
+             {% endfor %}
+
+     <table class="table table table-bordered table-striped table-primary  table-hover "> 
+        <thead>
+            <tr>
+            <th>Id reclamation</th>
+                 <th>nom</th>
+                   <th>prenom</th>   
+                <th>Description</th>
+                 <th>Type</th>
+                <th>Date</th>
+                 <th>Reponse</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+         <tbody id="entitiesNav">
+        {% for reclamation in reclamations %}
+            <tr>
+              <td>{{ reclamation.id }}</td>
+                <td>{{ reclamation.username.nom }}</td>
+                   <td>{{ reclamation.username.prenom}}</td>
+                <td>{{ reclamation.msg }}</td>
+                <td>{{ reclamation.type }}</td>
+                <td>{{ reclamation.dater ? reclamation.dater|date('Y-m-d') : '' }}</td>
+                 <td>
+                 <a href="{{ path('reponse_index_back') }}">réponse</a>
+
+                </td>
+                <td>
+                    <a href="{{ path('reclamation_show_back', {'id': reclamation.id}) }}">Afficher</a>
+                    <a href="{{ path('reclamation_edit_back', {'id': reclamation.id}) }}">Modifier</a>
+                </td>
+               
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">erreur</td>
+            </tr>
+        {% endfor %}
+        
+{% block javascripts %} 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+
+        var searchRequest = null;
+
+        $("#search").keyup(function() {
+            var minlength = 3;
+            var that = this;
+            var value = $(this).val();
+            var entitySelector = $("#entitiesNav").html('');
+
+            if (value.length >= minlength ) {
+                if (searchRequest != null)
+                    searchRequest.abort();
+                searchRequest = $.ajax({
+                    type: "GET",
+                    url: "{{ path('ajax_search2') }}",
+                    data: {
+                        'q' : value
+                    },
+                    dataType: "text",
+                    success: function(msg){
+                        //we need to check if the value is the same
+                        if (value==$(that).val()) {
+                            var result = JSON.parse(msg);
+                            $.each(result, function(key, arr) {
+                                $.each(arr, function(id, value) {
+                                    if (key == 'entities') {
+                                        if (id != 'error') {
+   entitySelector.append('<td>'+value[0]+'</td>'+'<td>'+value[1]+'</td>'+'<td>'+value[2]+'</td>'+'<td>'+value[3]+'</td>'+'<td>'+value[4]+'</td>'+'<td>'+value[5]+'</td>'
+   +'<td><a href="/projetpifinal/public/index.php/reponse/back">Afficher</a> </td>'+'<td><a href="/projetpifinal/public/index.php/reclamation/back/'+id+'">Afficher</a><a href="/projetpifinal/public/index.php/reclamation/back/'+id+'/edit">Modifier</a></td>');}
+   
+                                         else {
+            entitySelector.append('<li class="errorLi">'+value+'</li>');
+                                        }
+                                    }
+                                });
+                            });
+                        }
+                     }
+                });
+            }
+        });
+    });
+    </script>
+{% endblock %}
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('reclamation_new_back') }}">Ajouter reclamation</a>
+    </div>
+       </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+{% endblock %}

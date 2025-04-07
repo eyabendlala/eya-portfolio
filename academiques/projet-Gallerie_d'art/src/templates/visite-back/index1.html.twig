@@ -1,0 +1,62 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Visite{% endblock %}
+
+{% block body %}
+<div class="row ">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Liste des Visites</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+    
+        <div class="col-md-6 mb-5 mb-md-0" style="margin: 0 auto;" >
+                
+
+     <table class="table table table-bordered table-striped table-primary  table-hover "> 
+        <thead>
+            <tr>
+            <th>Id</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Disponibilite</th>
+                <th>Num_carte</th>
+                <th>Montant</th>
+                <th>Sexe</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for visite in visites %}
+            <tr>
+                <td>{{ visite.id }}</td>
+                <td>{{ visite.date ? visite.date|date('Y-m-d') : '' }}</td>
+                <td>{{ visite.description }}</td>
+                <td>{{ visite.disponibilite ? 'Yes' : 'No' }}</td>
+                <td>{{ visite.numCarte }}</td>
+                <td>{{ visite.montant }}</td>
+                <td>{{ visite.sexe }}</td>
+                <td>
+                 
+                <a href="{{ path('visite_show_back', {'id': visite.id}) }}">show</a>
+                    
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+   <a href="{{ path('visite_list') }}">Impression</a>
+   <a href="{{ path('statvisites') }}">Statistiques</a>
+   
+
+    </ul>
+</nav>
+
+{% endblock %}
+

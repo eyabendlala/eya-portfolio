@@ -1,0 +1,74 @@
+{% block body %}
+<style type="text/css">
+        * {
+            font-family: Candara, Arial, sans-serif;
+        }
+        table{
+            font-size: 17px;
+            border-color: black;
+             
+            background-color: #0abab5;
+        }
+        tfoot tr td{
+            font-weight: bold;
+            
+            font-size: x-small;
+        }
+        .gray {
+            background-color: lightgreen;
+        }
+    </style>
+    <style>
+        table, td, th {
+            border: 1px solid;
+        }
+        td {
+           color: #ccff00;
+           border-color: black;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        h1 {
+            font-family: "Times New Roman", Times, serif;
+            color: #ccff00;
+           border-color: black;
+        }
+    </style>
+    <h1 align="center"   >User index</h1>
+  
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>CIN</th>
+                <th>Role</th>
+                <th>Access</th>
+                <th>Date naissance</th>
+                <th>Date naissance</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.Nom }}</td>
+                <td>{{ user.Prenom }}</td>
+                <td>{{ user.CIN }}</td>
+                <td>{{ user.Role }}</td>
+                <td>{{ user.Access }}</td>
+                <td>{{ user.datenaissance|date('Y-m-d')}}</td>
+                <td valign="top"><img src="{{ 'Uploads/image/' ~ user.image }}" alt="" width="150"/></td>
+
+               
+            </tr>
+       
+        {% endfor %}
+        </tbody>
+    </table>
+
+  
+{% endblock %}

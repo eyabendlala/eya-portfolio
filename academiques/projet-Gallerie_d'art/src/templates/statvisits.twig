@@ -1,0 +1,89 @@
+{% extends 'front.office.html.twig' %}
+
+{% block title %}Hello Statistiques !{% endblock %}
+
+{% block body %}
+<section id="user" class="user">
+    
+        <div class="content-wrapper">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous">
+
+<div class="container">
+    <canvas id="users" width="400" height="120"></canvas>
+
+    <canvas id="annonces" width="400" height="100"></canvas>
+</div>
+<style>
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+   border: 16px ;
+  border-radius: 16px;
+  padding: 10px;
+  cursor: pointer;
+    width: 120px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+
+<div class="dropbtn">
+<select id="mySelect" onchange="myFunction()">
+  <option value="pie" >pie</option>
+  <option value="doughnut">doughnut</option>
+</select>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+<script>
+function myFunction() {
+
+    var x = document.getElementById("mySelect").value;
+    let users = document.querySelector("#users")
+    let UserGraph    = new Chart(users, {
+        type: x,
+        data: {
+            labels: ["Nombre Femmes","Nombre Hommes"],
+            datasets: [{
+                label: "Répartition des Coachs",
+                data: [{{ EntreprisesNbr }},{{ EtudiantsNbr }}],
+                backgroundColor: ["#ccff00","#0abab5"]
+            }]
+        }
+    })}
+</script>
+</div>
+</section><!-- End Contact Section -->
+{%endblock %}

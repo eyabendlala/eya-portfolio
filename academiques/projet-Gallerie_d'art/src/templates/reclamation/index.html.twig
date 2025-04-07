@@ -1,0 +1,130 @@
+{% extends 'front.office.html.twig' %}
+{% block title %}Reclamation index{% endblock %}
+ {% block body %}
+
+  <div class="alime-contact-form mt-50" >
+  <h2>Recherche Reclamation</h2>
+            <div class="sidebar-search">
+
+                <div class="input-group custom-search-form">
+
+                    <input type="text" id="search" class="form-control" placeholder="Search here">
+                </div>
+                <!-- /input-group -->
+            </div>
+            <ul class="nav" id="side-menu">
+                <li>
+                    <ul class="nav nav-second-level" id="mmm">
+                    </ul>
+                </li>
+            </ul><br><br><br><br>
+
+         
+    <div class="col-12 col-md-6" style="margin: 0 auto;" >
+        <div class="team-content-area text-left  wow fadeInUp"  >
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success" >
+                {{ message }}
+            </div>
+        {% endfor %}
+         <h4 class="card-title">Liste des Reclamations</h4>
+                
+
+     <table class="table table-bordered table-striped table-hover"> 
+        <thead>
+            <tr>
+                
+                 <th>Username</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Date</th>
+                
+                 <th>Reponse</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+          <tbody id="entitiesNav">
+        {% for reclamation in reclamations %}
+      <tr>
+                <td>{{ reclamation.username.Nom}}</td>
+                <td>{{ reclamation.msg }}</td>
+                      <td>{{ reclamation.type}}</td>
+                <td>{{ reclamation.dater ? reclamation.dater|date('Y-m-d') : '' }}</td>
+                  
+                 <td>
+                 <a href="{{ path('reponse_index' )}}"> Afficher</a>
+                </td>
+                <td>
+                    <a href="{{ path('reclamation_show', {'id': reclamation.id}) }}">Afficher</a>
+                    <a href="{{ path('reclamation_edit', {'id': reclamation.id}) }}">Modifier</a>
+                </td>
+               
+            
+        {% else %}
+            <tr>
+                <td colspan="5">error</td>
+            </tr>
+            </tr>
+
+        {% endfor %}
+</tr>
+
+{% block javascripts %} 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+
+        var searchRequest = null;
+
+        $("#search").keyup(function() {
+            var minlength = 3;
+            var that = this;
+            var value = $(this).val();
+            var entitySelector = $("#entitiesNav").html('');
+
+            if (value.length >= minlength ) {
+                if (searchRequest != null)
+                    searchRequest.abort();
+                searchRequest = $.ajax({
+                    type: "GET",
+                    url: "{{ path('ajax_search') }}",
+                    data: {
+                        'q' : value
+                    },
+                    dataType: "text",
+                    success: function(msg){
+                        //we need to check if the value is the same
+                        if (value==$(that).val()) {
+                            var result = JSON.parse(msg);
+                            $.each(result, function(key, arr) {
+                                $.each(arr, function(id, value) {
+                                    if (key == 'entities') {
+                                        if (id != 'error') {
+   entitySelector.append('<td>'+value[0]+'</td>'+'<td>'+value[1]+'</td>'+'<td>'+value[2]+'</td>'+'<td>'+value[3]+'</td>'
+   
+   +'<td><a href="/ProjetpiDev/public/index.php/reponse/">Afficher</td>'+
+   '<td><a href="/ProjetpiDev/public/index.php/reclamation/'+id+'">Afficher</a><br><a href="/ProjetpiDev/public/index.php/reclamation/'+id+'/edit">Modifier</a></td>');}
+   
+                                         else {
+            entitySelector.append('<li class="errorLi">'+value+'</li>');
+                                        }
+                                    }
+                                });
+                            });
+                        }
+                     }
+                });
+            }
+        });
+    });
+    </script>
+{% endblock %}
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('reclamation_new') }}">Ajouter une Reclamation</a>
+    </div> </div>
+</div>
+{% endblock %}

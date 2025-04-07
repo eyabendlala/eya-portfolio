@@ -1,0 +1,61 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Calender{% endblock %}
+
+{% block body %}
+    <div class="row ">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title"> calender</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+    
+        <div class="col-md-6 mb-5 mb-md-0" style="margin: 0 auto;" >
+                
+
+     <table class="table table table-borderless  table-striped table-primary table-hover">
+        <tbody>
+         
+            <tr>
+                <th>Title</th>
+                <td>{{ calender.title }}</td>
+            </tr>
+            <tr>
+                <th>Start</th>
+                <td>{{ calender.start ? calender.start|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>End</th>
+                <td>{{ calender.end ? calender.end|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ calender.description }}</td>
+            </tr>
+            <tr>
+                <th>All_day</th>
+                <td>{{ calender.allDay ? 'Yes' : 'No' }}</td>
+            </tr>
+          
+        </tbody>
+    </table>
+
+    <a href="{{ path('calender_index') }}">Mes Plans</a>
+    <a href="{{ path('full' )}}">Calender</a>
+
+    <a href="{{ path('calender_edit_back', {'id': calender.id}) }}">Modifier</a>
+
+    {{ include('calender-back/_delete_form.html.twig') }}
+    
+    </div>
+                           </div>
+</div>
+    </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+{% endblock %}

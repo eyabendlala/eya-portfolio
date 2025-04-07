@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('calender_delete', {'id': calender.id}) }}" onsubmit="vous-etes surde supprimer ce plans?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ calender.id) }}">
+    <button class="btn">Supprimer</button>
+</form>

@@ -1,0 +1,30 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Dons{% endblock %}
+
+{% block body %}
+    <h1>Dons</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ don.id }}</td>
+            </tr>
+            <tr>
+                <th>Num_carte</th>
+                <td>{{ don.numCarte }}</td>
+            </tr>
+            <tr>
+                <th>Montant</th>
+                <td>{{ don.montant }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('dons_index') }}">back to list</a>
+
+    <a href="{{ path('dons_index', {'id': don.id}) }}">show</a>
+
+    
+{% endblock %}

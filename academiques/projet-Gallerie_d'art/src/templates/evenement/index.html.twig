@@ -1,0 +1,79 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Evenement {% endblock %}
+
+{% block body %}
+<a class="btn btn-success" href="{{path('DESCr') }}">Trier par Nom en ordre décroissant</a>
+<a class="btn btn-success"href="{{path('TrierParNomASCr') }}">Trier par Nom en ordre croissant</a>
+<div class="pcoded-search-box" style="position: relative;color: white; ">
+  
+        <input  type="text" id="searchEnt" class="form-control" placeholder="Search">
+    
+
+
+    </div>
+         <button onclick="myFunction()">Click me</button>
+    <p id="demo"></p>
+
+<script>
+function myFunction() {
+    let searchString = document.getElementById('searchEnt').value; // recuperation de l'input de la recherche
+        window.location = ('http://127.0.0.1:8080/ProjetpiDev/public/index.php/evenement/orderRe/'+searchString
+
+);
+}
+</script>
+
+        
+    </div>
+<section id="user" class="user">
+    <br>
+    <br>
+    <br>
+    <div class="content-wrapper">
+    <h1>Evenement </h1>
+   
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomEvenement</th>
+                <th>Description</th>
+                <th>NombreDeParticipants</th>
+                <th>QrCode</th>
+                <th>Billet</th>
+                <th>DateDeEvenement</th>
+                <th>longitude</th>
+                <th>latitude</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for evenement in evenements %}
+            <tr>
+                <td>{{ evenement.id }}</td>
+                <td>{{ evenement.NomEvenement }}</td>
+                <td>{{ evenement.Description }}</td>
+                <td>{{ evenement.NombreDeParticipants }}</td>
+                <td><img src="{{ asset('Uploads/image/' ~evenement.QrCode) }}"></td>
+                <td>{{ evenement.Billet }}</td>
+                <td>{{ evenement.DateDeEvenement ? evenement.DateDeEvenement|date('Y-m-d') : '' }}</td>
+                <td>{{ evenement.longitude }}</td>
+                <td>{{ evenement.latitude }}</td>
+                <td>
+                    <a href="{{ path('evenement_show', {'id': evenement.id}) }}">Afficher les détails</a>
+                    <a href="{{ path('evenement_edit', {'id': evenement.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<a class="nav-link btn btn-success create-new-button" href="{{ path('evenement_new') }}">Ajouter un nouveau évènement</a>
+<a class="btn btn-success" href="{{path('evenement_pdf') }}">  PDF </a>
+
+</div>
+</section><!-- End Contact Section -->
+{% endblock %}

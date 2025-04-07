@@ -1,0 +1,124 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+<section id="user" class="user">
+    
+        <div class="content-wrapper">
+      
+    <h1 >User index</h1>
+    <div class="pcoded-search-box" style="position: relative;color:white; ">
+        <input onkeyup="searchEnt()" type="text" id="searchEnt" class="form-control" placeholder="Search">
+    </div>
+    <table class="table"style="width: 1500px;color:white;" >
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>CIN</th>
+                <th>Role</th>
+                <th>Access</th>
+                <th>Date naissance</th>
+                <th>Images</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr name="elements" id="{{'user'~ user.id}}">
+                <td>{{ user.id }}</td>
+                <td>{{ user.Nom }}</td>
+                <td>{{ user.Prenom }}</td>
+                <td>{{ user.CIN }}</td>
+                <td>{{ user.Role }}</td>
+                <td>{{ user.Access }}</td>
+                <td>{{ user.datenaissance|date('Y-m-d')}}</td>
+                <td><img src="{{ asset('Uploads/image/' ~user.image) }}"style="width: 100px" style="height:100px"></td> 
+                <td>
+                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="dropbtn" >
+        <select id="mySelect" onchange="myFunction()" style="background-color: slategray;">
+        <option value='u.id' ></option>
+          <option value='id1' >id asc</option>
+          <option value='id2'>id dsc</option>
+          <option value='nom1' >nom asc</option>
+          <option value='nom2'>nom dsc</option>
+        </select>
+        </div>
+   
+    <div class>
+        <section id="hero" class="d-flex align-items-center">
+    <script >
+
+        function searchEnt() {
+            let searchString = document.getElementById('searchEnt').value; // recuperation de l'input de la recherche
+            const elements = document.getElementsByName('elements') //recuperation de la reference du dom (liste des tr)
+            if (searchString.length!==0){
+                $.ajax({
+                    url: '/user/search1/'+searchString,
+                    success: function (data) {
+                        console.log("data :",data)
+                        for (let i = 0; i < elements.length; i++){
+                            elements[i].style.display = "none";
+                        }
+                        for (let j = 0; j < data.length; j++) {
+                            $('#user'+data[j].id).show('slow');
+                        }
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("erreur lors de la recuperation des données")
+                    }
+                });
+            }else{
+                for (let i = 0; i < elements.length; i++){
+                    elements[i].style.display = "revert";
+                }
+            }
+        }
+    </script>
+    </section><!-- End Hero -->
+
+</div>
+<div class>
+    <section id="hero" class="d-flex align-items-center">
+<script >
+
+    function myFunction() {
+        let searchString = document.getElementById('mySelect').value; // recuperation de l'input de la recherche
+      if(searchString=='id2'){
+        window.location = ('http://127.0.0.1:8080/ProjetpiDev/public/index.php/user/order1/'+'u.id');
+      }
+      if(searchString=='id1'){
+        window.location = ('http://127.0.0.1:8080/ProjetpiDev/public/index.php/user/order2/'+'u.id');
+      }
+      if(searchString=='nom2'){
+        window.location = ('http://127.0.0.1:8080/ProjetpiDev/public/index.php/user/order1/'+'u.Nom');
+      }
+      if(searchString=='nom1'){
+        window.location = ('http://127.0.0.1:8080/ProjetpiDev/public/index.php/user/order2/'+'u.Nom');
+      }
+    }
+</script>
+</section><!-- End Hero -->
+
+</div>
+    <a href="{{ path('user_new') }}">Create new</a>
+    <a href="{{ path('user_listpdf') }}">pdf</a>
+    <a href=" http://127.0.0.1:8080/ProjetpiDev/public/index.php/statistiques1 ">stat</a>
+
+</div>
+</section><!-- End Contact Section -->
+
+{% endblock %}

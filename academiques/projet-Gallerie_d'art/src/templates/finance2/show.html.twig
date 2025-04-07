@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Finance2{% endblock %}
+
+{% block body %}
+    <h1>Finance2</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ finance2.id }}</td>
+            </tr>
+            <tr>
+                <th>Dons</th>
+                <td>{{ finance2.dons }}</td>
+            </tr>
+            <tr>
+                <th>Evenement</th>
+                <td>{{ finance2.evenement }}</td>
+            </tr>
+            <tr>
+                <th>Commande</th>
+                <td>{{ finance2.commande }}</td>
+            </tr>
+            <tr>
+                <th>Somme</th>
+                <td>{{ finance2.somme }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ finance2.date }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('finance2_index') }}">back to list</a>
+
+    <a href="{{ path('finance2_edit', {'id': finance2.id}) }}">edit</a>
+
+    {{ include('finance2/_delete_form.html.twig') }}
+{% endblock %}

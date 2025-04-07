@@ -1,0 +1,13 @@
+{% extends 'front.office.html.twig' %}
+
+{% block title %}Modifier Dons{% endblock %}
+
+{% block body %}
+    <h1>Modifier Dons</h1>
+
+    {{ include('dons/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('dons_index') }}">back to list</a>
+
+    {{ include('dons/_delete_form.html.twig') }}
+{% endblock %}

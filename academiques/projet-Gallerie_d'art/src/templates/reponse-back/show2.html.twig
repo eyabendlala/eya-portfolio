@@ -1,0 +1,59 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Reponse{% endblock %}
+
+{% block body %}
+   <div class="row ">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title"> Réponse</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+    
+        <div class="col-md-6 mb-5 mb-md-0" style="margin: 0 auto;" >
+                
+
+     <table class="table table table-borderless  table-striped table-primary table-hover"> 
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ reponse.id }}</td>
+            </tr>
+            <tr>
+                <th>nom</th>
+                <td>{{ reponse.reclamation.username.nom }}</td>
+            </tr>
+            <tr>
+                <th>prenom</th>
+                <td>{{ reponse.reclamation.username.prenom }}</td>
+            </tr>
+            <tr>
+                <th> Type de reclamation</th>
+                <td>{{ reponse.reclamation.msg }}</td>
+            </tr>
+             <tr>
+                <th>reclamation</th>
+                <td>{{ reponse.reclamation.msg }}</td>
+            </tr>
+
+            <tr>
+                <th>Rep</th>
+                <td>{{ reponse.rep }}</td>
+            </tr>
+        </tbody>
+    </table>
+        <a href="{{ path('reclamation_index_back') }}">Liste des Reclamations</a>
+
+
+    </div>
+                           </div>
+</div>
+    </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+{% endblock %}

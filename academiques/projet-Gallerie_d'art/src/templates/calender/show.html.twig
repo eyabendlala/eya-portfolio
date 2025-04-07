@@ -1,0 +1,49 @@
+{% extends 'front.office.html.twig' %}
+{% block title %}Calender{% endblock %}
+
+{% block body %}
+    <h1>Calender</h1>
+    
+       <div class="alime-contact-form mt-50" >
+    <div class="col-12 col-md-6" style="margin: 0 auto;" >
+        <div class="team-content-area text-left  wow fadeInUp"  >
+         <h4 class="card-title">Plan</h4>
+                
+
+     <table class="table table-bordered table-striped table-hover "> 
+        <tbody>
+         
+            <tr>
+                <th>Title</th>
+                <td>{{ calender.title }}</td>
+            </tr>
+            <tr>
+                <th>Start</th>
+                <td>{{ calender.start ? calender.start|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>End</th>
+                <td>{{ calender.end ? calender.end|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ calender.description }}</td>
+            </tr>
+            <tr>
+                <th>All_day</th>
+                <td>{{ calender.allDay ? 'Yes' : 'No' }}</td>
+            </tr>
+          
+        </tbody>
+    </table>
+
+    <a href="{{ path('calender_index') }}">Mes Plans</a>
+    <a href="{{ path('full' )}}">Calender</a>
+
+    <a href="{{ path('calender_edit', {'id': calender.id}) }}">Modifier</a>
+
+    {{ include('calender/_delete_form.html.twig') }}
+    
+    </div> </div>
+</div>
+{% endblock %}

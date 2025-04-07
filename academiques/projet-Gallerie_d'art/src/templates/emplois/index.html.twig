@@ -1,0 +1,83 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Emplois index{% endblock %}
+
+{% block body %}
+<section id="user" class="user">
+    
+    <div class="content-wrapper">
+<section id="user" class="user">
+    
+    <div class="content-wrapper">
+    <h1>Emplois index</h1>
+    <div class="pcoded-search-box" style="position: relative;color: white;">
+        <input onkeyup="searchemp()" type="text" id="searchemp" class="form-control" placeholder="Searchemp">
+    </div>
+    <table class="table" style="color: white">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ddebut</th>
+                <th>Dfin</th>
+                <th>nom</th>
+                <th>prenom</th>
+                <th>CIN</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for emploi in emplois %}
+            <tr name="elements" id="{{'emploi'~ emploi.id}}">
+                <td>{{ emploi.id }}</td>
+                <td>{{ emploi.Ddebut ? emploi.Ddebut|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ emploi.Dfin ? emploi.Dfin|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ emploi.nom }}</td>
+                <td>{{ emploi.prenom }}</td>
+                <td>{{ emploi.cin }}</td>
+                <td>
+                    <a href="{{ path('emplois_show', {'id': emploi.id}) }}">show</a>
+                    <a href="{{ path('emplois_edit', {'id': emploi.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class>
+        <section id="hero" class="d-flex align-items-center">
+    <script >
+
+        function searchemp() {
+            let searchString = document.getElementById('searchemp').value; // recuperation de l'input de la recherche
+            const elements = document.getElementsByName('elements') //recuperation de la reference du dom (liste des tr)
+            if (searchString.length!==0){
+                $.ajax({
+                    url: '/emplois/searchemp/'+searchString,
+                    success: function (data) {
+                        console.log("data :",data)
+                        for (let i = 0; i < elements.length; i++){
+                            elements[i].style.display = "none";
+                        }
+                        for (let j = 0; j < data.length; j++) {
+                            $('#emploi'+data[j].id).show('slow');
+                        }
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("erreur lors de la recuperation des données")
+                    }
+                });
+            }else{
+                for (let i = 0; i < elements.length; i++){
+                    elements[i].style.display = "revert";
+                }
+            }
+        }
+    </script>
+    </section><!-- End Hero -->
+    <a href="{{ path('emplois_new') }}">Create new</a>
+</div>
+</section><!-- End Contact Section -->
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'front.office.html.twig' %}
+
+{% block title %}Collaborateur index{% endblock %}
+
+{% block body %}
+    <h1>Nos Collaborateurs</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+               
+                <th>NomCollaborateur</th>
+                <th>PrenomCollaborateur</th>
+                <th>Role</th>
+                <th>NumeroTel</th>
+                <th>Entreprise</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for collaborateur in collaborateurs %}
+            <tr>
+                
+                <td>{{ collaborateur.NomCollaborateur }}</td>
+                <td>{{ collaborateur.PrenomCollaborateur }}</td>
+                <td>{{ collaborateur.Role }}</td>
+                <td>{{ collaborateur.NumeroTel }}</td>
+                <td>{{ collaborateur.Entreprise }}</td>
+                
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div> 
+   
+
+    
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'front.office.html.twig' %}
+
+{% block title %}Reclamation{% endblock %}
+
+{% block body %}
+    
+       <div class="alime-contact-form mt-50" >
+    <div class="col-12 col-md-6" style="margin: 0 auto;" >
+        <div class="team-content-area text-left  wow fadeInUp"  >
+         <h4 class="card-title">Reclamation</h4>
+                
+
+     <table class="table table-bordered table-striped table-hover "> 
+        <tbody>
+                <th>Id reclamation</th>
+                <td>{{ reclamation.id }}</td>
+            </tr>
+           
+            <tr>
+                <th> Description </th>
+                <td>{{ reclamation.msg }}</td>
+            </tr>
+            <tr>
+                <th> Type </th>
+             {% if reclamation.type == "1" %}
+                  <td id="entitiesNav">event</td>
+                  {% else %}
+                     {% if reclamation.type == "2" %}
+                          <td id="entitiesNav">shop</td>
+                            {% else %}
+                               {% if reclamation.type == "3" %}
+                                     <td id="entitiesNav">Autre</td>
+                                   {% endif %} {% endif %} 
+                                            {% endif %} 
+
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ reclamation.dater ? reclamation.dater|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('reclamation_index') }}">liste des Reclamations</a>
+
+    <a href="{{ path('reclamation_edit', {'id': reclamation.id}) }}">Modifier</a>
+
+
+     </div> </div>
+</div>
+{% block javascript %}
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=qB7aQLES"></script>
+{% endblock %}
+
+{% endblock %}
