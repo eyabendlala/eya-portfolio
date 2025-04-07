@@ -50,7 +50,7 @@ Ce projet a été réalisé en collaboration avec 3 autres membres de l’équip
 
 Voici quelques captures d'écran de l'interface de l'application :
 
-![Interface principale](./images/interface_principale.png)
+![Interface principale](./images/interface_principale.PNG)
 ![Gestion des animaux](./images/gestion_animaux.png)
 ![Module RH](./images/module_rh.png)
 ![Gestion Equipement](./images/gestion_equipement.png)
