@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Emploi Posted</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+        }
+
+        .text-content {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 10px;
+        }
+
+        .header-content {
+            font-weight: bold;
+        }
+
+        .titre {
+            color: #2DAAE1;
+        }
+
+        .lien {
+            text-decoration: underline;
+            font-weight: normal;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center><img src= "/static/favicon.ico" alt="Khedma" width="64px"></center>
+        <div class="text-content">
+            <p>Une nouvelle offre d'emploi a été soumise sur <a href="" class="lien titre">Khedma</a>. Elle est en attente de validation par un administrateur dans le <a href="" class="lien titre">Tableau de bord</a> du site.</p>
+            <p>Voici les détails...</p>
+        </div>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td class="header-content">Intitulé de l'offre</td>
+                    <td class="titre">{{ emploi.titre }}</td>
+                </tr>
+                <tr>
+                    <td class="header-content">Localisation</td>
+                    <td>{{ emploi.localisation }}</td>
+                </tr>
+                <tr>
+                    <td class="header-content">Type d'offre d'emploi</td>
+                    <td>{{ emploi.type_emploi }}</td>
+                </tr>
+                <tr>
+                    <td class="header-content">Catégories de l'offre</td>
+                    <td>{{ categories }}</td>
+                </tr>
+                <tr>
+                    <td class="header-content">Nom de l'employeur</td>
+                    <td>{{ employeur }}</td>
+                </tr>
+                <tr>
+                    <td class="header-content">Email de l'employeur</td>
+                    <td>{{ email }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

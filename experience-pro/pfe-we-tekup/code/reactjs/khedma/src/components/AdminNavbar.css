@@ -1,0 +1,119 @@
+.navclass{
+    background-color: #2DAAE1;
+    position: fixed;
+    height: 100%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.navbar-items{
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+
+.navbar-items a{
+    color: white;
+    text-decoration: none;
+}
+.navbar-items a:hover{
+    background-color: #f0f8ff;
+    border-radius: 15px;
+    color: black;
+}
+
+#logout{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 80px;
+    margin-left: 0px;
+    width: 200px;
+}
+
+#logout{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 120px;
+    margin-left: 0px;
+    width: 200px;
+}
+
+
+#goto{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 80px;
+    margin-left: 0px;
+    width: 200px;
+}
+
+/* Réduire l'espace autour des lignes de séparation */
+.custom-hr {
+  margin: 2px 0; /* Réduit la marge autour des lignes */
+  border: 0;
+  border-top: 1px solid #dee2e6; /* Couleur de la ligne */
+}
+
+.navbar-items .nav-item {
+  line-height: 1.5rem; /* Réduit la hauteur de ligne pour moins d'espace vertical */
+  margin: 0.2rem 0; /* Réduit la marge verticale entre les éléments */
+}
+/* Supprimer les marges des sous-menus */
+.navbar-items ul {
+  padding: 0; /* Supprime le padding des sous-menus */
+  margin: 0; /* Supprime la marge des sous-menus */
+}
+
+.navclass .nav-item .active {
+    color: white;
+}
+
+.admin-navbar .navbar-toggle {
+    display: none;
+  }
+
+@media screen and (max-width: 768px) {
+  .admin-navbar .navbar-toggle {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    margin-left: 20px;
+    top: 1;
+    z-index: 99999;
+  }
+
+  .admin-navbar .menu-open {
+    display: block;
+    position: fixed;
+    width: 220px;
+    transition: all 0.5s ease;
+    margin-top: 30px;
+    width: 300px;
+    z-index: 99999;
+  }
+
+  .navclass{
+    background-color: #2DAAE1;
+    position: fixed;
+    height: 850px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .navbar-items .nav-item {
+    text-align: left;
+    width: auto;
+    margin: 0;
+    margin-left: 0;
+    border-bottom: none;
+    margin-left: 0;
+}
+
+  #logout{
+    margin-bottom: 120px;
+  }
+
+  #goto{
+    margin-bottom: 80px;
+  }
+}

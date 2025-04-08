@@ -1,0 +1,40 @@
+.secteur-card {
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    border-radius: 10px;
+  }
+  
+  .secteur-card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+  
+  .secteur-card h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .secteur-card p {
+    color: #666;
+  }
+  
+  .secteur-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .tableSecteur {
+    background-color: #fff; /* Couleur d'arrière-plan du tableau */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre portée pour un effet "flottant" */
+  }
+  
+  .tableSecteur th {
+    background-color: #007bff; /* Couleur d'arrière-plan des en-têtes */
+    color: white; /* Couleur du texte des en-têtes */
+  }
+  
+  .tableSecteur-hover tbody tr:hover {
+    background-color: #f0f0f0; /* Couleur d'arrière-plan au survol des lignes */
+  }

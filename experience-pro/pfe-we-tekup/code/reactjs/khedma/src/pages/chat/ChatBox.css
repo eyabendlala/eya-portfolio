@@ -1,0 +1,163 @@
+.react-input-emoji--input {
+    font-weight: 400;
+    max-height: 100px;
+    min-height: 20px;
+    outline: none;
+    overflow-x: auto; /* Enable horizontal scrollbar when content overflows */
+    overflow-y:unset; /* Enable vertical scrollbar when content exceeds max height */
+    position: relative;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    z-index: 1;
+    width: 100%;
+    user-select: text;
+    text-align: left;
+}
+
+.react-input-emoji--button {
+    position: relative;
+    display: block;
+    text-align: center;
+    padding: 0 10px;
+    overflow: hidden;
+    transition: color 0.1s ease-out;
+    margin: 0;
+    box-shadow: none;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    width: 50px;
+}
+
+.file-upload-icon{
+    width: 20px;
+}
+
+.send-button{
+    width: auto;
+    height: 25px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: gray;
+    border: none;
+}
+
+.send-button:hover{
+    border: none;
+}
+
+.chat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.inputSize{
+    width: 90%;
+    max-width: 90%;
+}
+
+.ChatBox-container {
+    background: var(--cardColor);
+    border-radius: 1rem;
+    display: grid;
+    grid-template-areas: "header" "body" "sender"; /* Define the layout */
+    margin-top: 130px;
+    
+}
+
+
+  
+ 
+  
+.follower-vertical{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
+  
+.follower-horizontal{ 
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    
+
+}
+.chat-header {
+    grid-area: header; /* Specify the area for the chat header */
+    padding: 1rem 1rem 0rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-body {
+    grid-area: body; /* Specify the area for the chat body */
+    max-height: 550px; 
+    overflow-y: auto; /* Add vertical scroll when the content overflows */
+    padding: 1.5rem;
+    display: flex;
+    margin-top: 0;
+    flex-direction: column;
+    gap: 0.5rem;
+   
+    overflow: scroll !important;
+    border-radius: 15px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    line-height: 0.5;
+    background: rgba(44, 170, 225, 0.2);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(44, 170, 225, 0.2);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin: auto;
+}
+
+.message {
+
+    background: var(--buttonBg);
+    color: white;
+    padding: 0.7rem;
+    border-radius: 1rem 1rem 1rem 0;
+    max-width: 28rem;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.message>span:nth-child(2){
+    font-size: 0.7rem;
+    color: var(--textColor);
+    align-self: end;
+}
+
+.own {
+  align-self: flex-end;
+  border-radius: 1rem 1rem 0 1rem;
+  background: linear-gradient(98.63deg, #24e4f0 0%, #358ff9 100%);
+}
+
+
+.own span{
+    line-height: 2;
+}
+.sender{
+    border-radius: 1rem 1rem 0 1rem;
+    background: linear-gradient(98.63deg, #24e4f0 0%, #7EF533 100%);
+}
+
+.sender span{
+    line-height: 2;
+}
+
+.nameChatBox{
+    color: white;
+    font-size: 20px;
+}

@@ -1,0 +1,274 @@
+.site-wrap {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    padding-bottom: 50px;
+  }
+  
+  .section-hero {
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .section-hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .custom-breadcrumbs {
+    font-size: 1.2rem;
+    opacity: 0.8;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  /* Details section */
+  .details-container {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center; /* Center the content horizontally */
+
+  }
+  
+
+
+  .details-container .candidate-image-circle {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: block; /* Ensures the image behaves as a block element */
+    margin-left: auto;
+    margin-right: auto; /* Centers the image horizontally */
+  }
+  
+  
+  .details-container h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .details-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .details-container strong {
+    font-weight: bold;
+  }
+  
+  .details-container a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .details-container a:hover {
+    text-decoration: underline;
+  }
+  
+ 
+  .disabled-button {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  .already-clicked-message {
+    margin-top: 10px;
+  }
+  
+  .fa-icon {
+    font-size: 2rem;
+  }
+
+  
+  /* Container for icons to ensure they are positioned properly *
+
+/* Wrapper for each icon */
+.icon-wrapper {
+  display: flex;
+  justify-content: center; /* Center icons horizontally within the wrapper */
+  align-items: center; /* Center icons vertically within the wrapper */
+  padding: 10px; /* Space around each icon */
+  flex: 1; /* Ensure each icon takes up equal space */
+}
+
+/* Button for actions with icons */
+.btn-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 10px;
+}
+
+.btn-action:hover {
+  background-color: #f0f0f0; /* Light background on hover */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Style for each icon */
+.icon {
+  font-size: 2rem; /* Size of the icon */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and size changes */
+}
+
+/* Text below icons */
+.icon-text {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 5px;
+}
+
+/* Hover effect for each icon */
+.icon:hover {
+  opacity: 0.8; /* Slightly fade the icon on hover */
+  transform: scale(1.1); /* Slightly increase the size on hover */
+}
+
+/* Individual icon colors */
+.icon-whatsapp {
+  color: green;
+}
+
+.icon-envelope {
+  color: rgb(47, 117, 160);
+}
+
+
+.icon-khedma {
+  color: rgb(47, 117, 160);
+}
+
+.icon-chat {
+  color: #007bff; /* Example color */
+}
+
+  /* CandidatDetails.css */
+.email-form {
+  margin-top: 10px;
+}
+.email-form-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.email-form-container h4 {
+  margin-bottom: 15px;
+}
+
+.email-form-container .form-group {
+  margin-bottom: 15px;
+}
+
+.email-form-container .form-control {
+  border-radius: 4px;
+}
+
+.email-form-container .btn {
+  margin-right: 10px;
+}
+
+.chat-overlay {
+  position: fixed;
+  top: 5%;
+  left: 10%; /* Assurez-vous que le conteneur est aligné à gauche */
+  width: 80%;
+  height: 90%;
+  z-index: 1000;
+}
+
+  .close-buttonnn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgb(157, 230, 250);
+    border: none;
+    cursor: pointer;
+    z-index: 1100; /* Assurez-vous que le bouton est au-dessus de la fenêtre de chat */
+    padding: 10px; /* Ajout d'une zone de clic plus grande pour une meilleure accessibilité */
+  }
+
+.chat-container {
+  background: white;
+  width: 100%; /* Ajustez la largeur en pourcentage ou en pixels selon vos besoins */
+  max-width: 1600px; /* Limite maximale de largeur pour s'adapter aux écrans plus grands */
+  height: 100%; /* Ajustez la hauteur en pourcentage ou en pixels selon vos besoins */
+  max-height: 900px; /* Limite maximale de hauteur pour s'adapter aux écrans plus grands */
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: auto;  
+}
+
+.candidat-details-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Scrollable Content */
+.candidat-details-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 30px; /* Augmentez cette valeur pour un espacement supplémentaire */
+  min-height: 90vh; /* Définissez une hauteur minimale pour que la partie défilante soit plus grande */
+}
+
+/* Fixed Actions at the Bottom */
+.candidat-actions {
+  position: sticky;
+  bottom: 0;
+  padding: 20px 0; /* Augmentez le padding pour créer plus d'espace autour des actions */
+  margin-top: 30px; /* Ajoutez une marge supérieure pour les éloigner encore plus du contenu */
+  border-top: 1px solid #ddd;
+  z-index: 10;
+  background-color: white; /* Assurez-vous que les actions ont un fond pour rester visibles au-dessus du contenu */
+}  
+
+.disabled-button {
+  cursor: default; 
+  opacity: 0.65; 
+  pointer-events: none; /* Disable pointer events so the button cannot be clicked */
+}
+
+.already-clicked-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  max-width: 250px; 
+  margin: 0 auto; 
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+  
+  .chat-container {
+    width: 100%;
+    height: 100%;
+    max-width: none; /* Supprimez la largeur maximale */
+    max-height: none; /* Supprimez la hauteur maximale */
+  }
+
+
+
+
+
+}

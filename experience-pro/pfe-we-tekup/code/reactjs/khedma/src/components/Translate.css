@@ -1,0 +1,7 @@
+
+  /* Cacher les éléments supplémentaires si nécessaire */
+  body :not(#google_translate_element) > .goog-te-gadget,
+  body :not(#google_translate_element) > iframe {
+    display: none;
+  }
+  

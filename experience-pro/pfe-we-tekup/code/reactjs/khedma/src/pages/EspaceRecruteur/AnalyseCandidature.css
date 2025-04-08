@@ -1,0 +1,80 @@
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* The thumb, which is the draggable part of the scrollbar */
+  ::-webkit-scrollbar-thumb {
+    background-color: #2DAAE1;
+    border-radius: 25px;
+  }
+  
+  /* The track, which is the non-draggable part of the scrollbar */
+  ::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes borderMovement {
+    0% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #2DAAE1; 
+    }
+    100% {
+        border-color: transparent;
+    }
+  }
+  
+
+  .chart-container {
+    width: 85%; /* Augmente cette valeur pour élargir les graphes */
+    max-width: 550px; /* Ajuste cette valeur pour limiter la largeur maximale des graphes */
+    height: 300px; /* Tu peux laisser cette valeur telle quelle si tu ne veux pas changer la hauteur */
+    margin: 20px auto;
+    padding: 10px;
+}
+
+
+/* .row {
+  justify-content: space-around; 
+  display: flex;
+  flex-wrap: wrap;
+} */
+ 
+.container {
+  width: 90%; /* Réduit la largeur totale de la zone de contenu */
+  margin: 0 auto; /* Centre la zone de contenu */
+}
+  .summaryCard {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    animation: borderMovement 2s infinite;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .summaryCard h3 {
+    margin-top: 5px;
+  }
+  
+  .summaryCard h5 {
+    color: #2DAAE1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Charts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+/* Cacher les éléments lors de la génération du PDF */
+.hide-on-print {
+  display: none !important;
+}

@@ -1,0 +1,166 @@
+@keyframes borderMovement {
+    0% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #2DAAE1;
+    }
+    100% {
+        border-color: transparent;
+    }
+}
+
+.bestOfBox{
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    min-height: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-top: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-left: 0px solid transparent;
+    animation: borderMovement 2s infinite;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin-top: 25px;
+}
+
+.divTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.divTitle span{
+    margin-left: 10px;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.divContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.divContent span{
+    color: black;
+    font-size: 18px;
+}
+
+.loginContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Wrap items to the next line if necessary */
+}
+
+#loginSociete{
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    min-height: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-top: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-left: 0px solid transparent;
+    animation: borderMovement 2s infinite;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    }
+
+#loginCondidat{
+    background-color: rgb(23, 23, 46);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    min-height: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-top: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-left: 0px solid transparent;
+    animation: borderMovement 2s infinite;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.square {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #2DAAE1; /* Adjust the color as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 40%;
+    transform: rotate(45deg);
+    z-index: 1;
+}
+
+.square span {
+    transform: rotate(-45deg);
+    color: white;
+    font-weight: bold;
+}
+
+#bestOfSocietes{
+    margin-top: 20px;
+    background-color: rgb(23, 23, 46);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    min-height: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-top: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-left: 0px solid transparent;
+    animation: borderMovement 2s infinite;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.leftright {
+    justify-content: flex-end; /* To push the icons to the right */
+}
+
+.leftright > *:not(:last-child) {
+    margin-right: 20px; /* Adjust the margin as needed */
+}
+
+  

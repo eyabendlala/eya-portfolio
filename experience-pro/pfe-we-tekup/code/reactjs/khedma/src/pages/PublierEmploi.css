@@ -1,0 +1,343 @@
+.box{
+  width: 1000px;
+  transform: translate(15%);
+}
+h2{
+
+  margin-left: 80px;
+
+}
+
+input[type="submit"]{
+  font-size: 20px;
+  border: none;
+  outline: none;
+  width:450px;
+  height: 60px;
+  background: #2DAAE1;
+  padding: 5px;
+  margin-left: -70px;
+  margin-top: 20px;
+  border-radius: 90px;
+  font-weight: 600;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+input[type="submit"]:focus {
+  background: linear-gradient(90deg,#2DAAE1,#2D50E1);
+  opacity: 0.8;
+  
+
+}
+#createbtn{
+  font-size: 20px;
+  border: none;
+  outline: none;
+  width:450px;
+  height: 60px;
+  background: #2DAAE1;
+  padding: 5px;
+  margin-left: -20px;
+  margin-top: 20px;
+  border-radius: 90px;
+  font-weight: 600;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+
+
+.titlelogin{
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.labelspan{
+  font-size: 1.2em;
+}
+.box input[type="text"],
+.box input[type="date"],
+.box input[type="password"],
+.box input[type="url"] {
+  border: 2px solid #06A9F1;
+  background: none;
+  width: 380px;
+  margin-top: -10px;
+  display: block;
+  height: 60px;
+  outline: none;
+  border-radius: 24px;
+  transition: 0.25s;
+  padding-left: 40px; /* Ajoutez cette ligne */
+}
+
+
+.iconlogin {
+  position: absolute;
+  margin-top: -38px;
+  left: 16px;
+  width: 30px;
+  color: #2DAAE1;
+  border-right: 1px solid #2DAAE1;
+}
+.box a {
+  margin-top: -20px;
+}
+.country-flag{
+  position: absolute;
+  top: 35px;
+  left: 25px;
+
+  width: 32px;
+  height: 40px;
+}
+.box .input-select {
+  border: 2px solid #06A9F1;
+  background: none;
+  width: 380px;
+  margin-top: -10px;
+  display: block;
+  height: 60px;
+  outline: none;
+  transition: 0.25s;
+  padding-left: 40px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+.form-control.input-select {
+  border: 2px solid #06A9F1;
+  background: none;
+  margin-top: -10px;
+  display: block;
+  height: 60px;
+  outline: none;
+  border-radius: 24px;
+  transition: 0.25s;
+  padding-left: 40px;
+  
+}
+
+.form-control.input-select:focus {
+  box-shadow: 0 0 0 4px rgba(6, 169, 241, 0.5)!important; 
+}
+
+.password-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.password-toggle-btn:focus {
+  /* Add the following to remove the focus outline when the button is in focus */
+  outline: none;
+  border: none;
+}
+
+.password-toggle-icon {
+  font-size: 18px;
+  color: #2DAAE1;
+  
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  color: transparent;
+}
+
+.custom-file-btn {
+  background: #0000ff; 
+  color: white;
+  padding: 0.5rem;
+}
+/* Main file input styles */
+.upload-box {
+  font-size: 16px;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 5px 5px 10px black;
+  width: 350px;
+  height: 80px;
+  line-height: 40px; /* Adjust to match the height */
+  outline: none;
+}
+
+/* Button styles */  
+.upload-box::-webkit-file-upload-button {
+  color: #ffffff;
+  background: #06A9F1;
+  padding: 20px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 1px 0 1px 1px #ffffff;
+  outline: none;
+}
+.custom-button {
+  border-radius: 12px;
+  /* Add any other custom styles you need for this button here */
+}
+/* Hover styles */
+.upload-box::-webkit-file-upload-button:hover {
+  background: #0000ff;
+}
+
+.emplois-grid {
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px; /* gap between rows */
+  background-color: black;
+  padding: 20px; /* Add padding around the grid */
+ 
+ 
+}
+.postEmploi {
+  background: rgba(255, 255, 255, 0.5); /* Glassy background */
+  backdrop-filter: blur(15px); /* Apply blur effect */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px; /* Reduced padding */
+  height: 100%;
+  margin: 0; /* Reset margin */
+  transition: background 0.3s;
+  color: #2DAAE1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Vertically align content */
+  width: 100%;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.postEmploi:hover {
+  background: rgba(45, 170, 225, 0.8); /* Darker background on hover */
+  color: white;
+  transform: scale(1.05); /* Slightly reduce the scale on hover */
+}
+
+/* Apply the active effect for mobile devices */
+@media (max-width: 768px) {
+  .postEmploi:active {
+    background: #06A9F1;
+  }
+}
+
+
+
+.image-section img {
+  width:100% ;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.details-section-for-titre-image-localisation {
+  order:2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 0;
+  left: 25%;
+  transform: translateX(-50%);
+  flex-grow: 1;
+  width: 200px;
+  grid-column: 2;
+  
+}
+
+.titreEmploi {
+  color: black;
+  font-size: 20px;
+  margin: revert; /* Reset margin to remove extra spacing */
+}
+
+.localisationEmploi {
+  color: grey;
+  font-size: 13px;
+  margin: 0; /* Reset margin to remove extra spacing */
+}
+
+
+
+
+
+.button-section {
+  position: absolute;
+  top:25%;
+  right: 0;
+  text-align: right;
+  gap: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.emploi-type-button {
+  margin-bottom: 10px; 
+
+  background-color: #38D09D;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 24px;
+  padding: 5px 10px;
+  font-size: 14px;
+  width: 100px;
+  height: 30px;
+
+}
+.emploi-type-button:hover {
+  background-color: #F36969;
+}
+
+.postuler-button {
+  background-color: #F36969;
+  border: none;
+
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 24px;
+  width: 100px;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 14px;
+  
+
+}
+.postuler-button:hover {
+  background-color: #F36969;
+}
+.full-page-bg {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Set the desired height */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} 
+.app-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.check-icon {
+  margin-left: 5px;
+  color: green; /* Adjust the color as needed */
+}
+/* Add this CSS to your stylesheet */
+.description-text {
+  text-align: justify; /* Align text both left and right */
+  line-height: 1.5; /* Adjust line height for readability */
+  margin-top: 10px; /* Add margin as needed */
+  padding: 10px; /* Add padding as needed */
+  background-color: #f7f7f7; /* Optional background color */
+  border: 1px solid #ddd; /* Optional border */
+  border-radius: 5px; /* Optional border radius */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional box shadow for a card-like appearance */
+} 
+

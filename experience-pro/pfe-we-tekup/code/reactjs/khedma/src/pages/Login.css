@@ -1,0 +1,127 @@
+.box{
+    width: 600px;
+    left: 50%;
+    transform: translate(50%);
+}
+h5{
+    text-align: left;
+    margin-left: 15px;
+
+}
+input[type="submit"],
+#createbtn{
+    font-size: 20px;
+    border: none;
+    outline: none;
+    flex: 0 0 450px;
+    height: 60px;
+    background: #2DAAE1;
+    padding: 5px;
+    border-radius: 90px;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-align: center;
+    cursor: pointer;
+}
+input[type="submit"]:focus,
+#createbtn:focus {
+    background: linear-gradient(90deg,#2DAAE1,#2D50E1);
+    opacity: 0.8
+
+}
+
+
+.titlelogin{
+    text-transform: uppercase;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+}
+
+.labelspan{
+    font-size: 1.2em;
+    margin-left: 20px;
+}
+.custom-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+input[type="url"] {
+
+    border: 2px solid #2DAAE1;
+    background: none;
+    flex: 0 0 450px;
+    margin-top: -10px;
+    display: block;
+    height: 60px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    padding-left: 40px; /* Ajoutez cette ligne */
+}
+#email:focus,
+#password:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="url"]:focus {
+    background: transparent;
+    box-shadow: 0 0 25px 0 #2DAAE1;
+}
+
+
+
+.iconlogin {
+    margin-right: 10px;
+    left: 60px;
+    margin-top:-38px;
+    width: 30px;
+    color: #2DAAE1;
+    border-right: 1px solid #2DAAE1;
+}
+.box a {
+    margin-top: -20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+.error-message {
+    color: red;
+    margin-top: 10px;
+  }
+.password-toggle-btn {
+    position: absolute;
+    right: 10px; 
+    margin-top: -50px;
+  }
+.password-toggle-btn:focus {
+    /* Add the following to remove the focus outline when the button is in focus */
+    outline: none;
+    border: none;
+  }
+  
+.password-toggle-icon {
+    font-size: 12px;
+    color: #2DAAE1;
+    
+  }
+
+  /* styles.css */
+.toast-custom-style {
+    background-color: skyblue;
+  }
+  

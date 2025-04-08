@@ -1,0 +1,176 @@
+.box{
+    width: 1000px;
+    transform: translate(15%);
+}
+h2{
+
+    margin-left: 80px;
+
+}
+
+.titleSignUp{
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+}
+
+input[type="submit"]{
+    font-size: 20px;
+    border: none;
+    outline: none;
+    width:450px;
+    height: 60px;
+    background: #2DAAE1;
+    padding: 5px;
+    margin-left: -70px;
+    margin-top: 20px;
+    border-radius: 90px;
+    font-weight: 600;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+input[type="submit"]:focus {
+    background: linear-gradient(90deg,#2DAAE1,#2D50E1);
+    opacity: 0.8;
+    
+
+}
+#createbtn{
+    font-size: 20px;
+    border: none;
+    outline: none;
+    width:450px;
+    height: 60px;
+    background: #2DAAE1;
+    padding: 5px;
+    margin-left: -20px;
+    margin-top: 20px;
+    border-radius: 90px;
+    font-weight: 600;
+    font-size: 1.5em;
+    cursor: pointer;
+
+}
+.titlelogin{
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.labelspan{
+    font-size: 1.2em;
+}
+.box input[type="text"],
+.box input[type="date"],
+.box input[type="password"],
+.box input[type="url"] {
+    border: 2px solid #2DAAE1;
+    background: none;
+    width: 380px;
+    margin-top: -10px;
+    display: block;
+    height: 60px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    padding-left: 40px; /* Ajoutez cette ligne */
+}
+
+
+.iconlogin {
+    position: absolute;
+    margin-top: -38px;
+    left: 16px;
+    width: 30px;
+    color: #2DAAE1;
+    border-right: 1px solid #2DAAE1;
+}
+.box a {
+    margin-top: -20px;
+}
+.country-flag{
+    position: absolute;
+    top: 35px;
+    left: 25px;
+
+    width: 32px;
+    height: 40px;
+}
+.box .input-select {
+    border: 2px solid #2DAAE1;
+    background: none;
+    width: 380px;
+    margin-top: -10px;
+    display: block;
+    height: 60px;
+    outline: none;
+    transition: 0.25s;
+    padding-left: 40px;
+  }
+
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  .form-control.input-select {
+    border: 2px solid #2DAAE1;
+    background: none;
+    margin-top: -10px;
+    display: block;
+    height: 60px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    padding-left: 40px;
+  }
+.password-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+.password-toggle-btn:focus {
+    /* Add the following to remove the focus outline when the button is in focus */
+    outline: none;
+    border: none;
+  }
+  
+.password-toggle-icon {
+    font-size: 18px;
+    color: #2DAAE1;
+    
+}
+.upload-box {
+    font-size: 16px;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px black;
+    width: 350px;
+    outline: none;
+  }
+  
+  /* Button styles */  
+  .upload-box::-webkit-file-upload-button {
+    color: #ffffff;
+    background: #2DAAE1;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 1px 0 1px 1px #ffffff;
+    outline: none;
+  }
+  
+  /* Hover styles */
+  .upload-box::-webkit-file-upload-button:hover {
+    background: #0000ff;
+  }
+  
+  
+  
+  
+
+  
+

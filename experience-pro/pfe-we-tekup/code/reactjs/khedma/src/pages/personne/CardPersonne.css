@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+ *{
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+
+}
+.card-employee {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 18rem;
+    margin-bottom: 10rem;
+}
+
+section .cardPersonne .image{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    padding: 3px;
+    background: #2DAAE1;
+}
+section .cardPersonne .image img{
+    height: 100%;
+    width: 100%;
+    /* l'image ou la vidéo va remplir complètement le conteneur tout en conservant son rapport largeur-hauteur d'origine.  */
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+
+}
+.cardPersonne{
+    position: relative;
+    background: #eaf5f9;
+    border-radius: 20px;
+    margin: 5px;
+    width: 260px;
+    
+    
+
+}
+.cardPersonne::before{
+    content:"";
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    background: #2DAAE1;
+    border-radius: 20px 20px 0 0;
+
+}
+
+.cardPersonne .card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    padding: 30px;
+    position: relative;
+    z-index: 100;
+
+}
+.cardPersonne .name-profession{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    color: #333;
+}
+.name-profession .name{
+    font-size: 16px;
+    font-weight: 500;
+}
+.name-profession .profession{
+    font-size: 14px;
+    font-weight: 300;
+}
+.cardPersonne .rating{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.cardPersonne .rating .etoile{
+    font-size: 18px;
+    margin: 0 10px;
+
+}
+.cardPersonne .button{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+.swiper{
+    width: 800px;
+}
+.cardPersonne .button button{
+    background-color: #2DAAE1;
+    outline: none;
+    border: none;
+    height: 50px;
+    color: #fff;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.button button:hover{
+    background-color: #0000ff;
+}
+
+@media screen and (max-width: 1030px){
+    .card-employee {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30rem;
+        width: auto;
+    }
+}

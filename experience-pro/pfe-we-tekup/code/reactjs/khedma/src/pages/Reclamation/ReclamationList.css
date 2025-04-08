@@ -1,0 +1,174 @@
+.reclamation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+}
+
+/* .reclamation-list-wrapper {
+    flex: 1;
+    margin-right: 20px;
+} */
+
+.reclamation-list-wrapper {
+    width: 50%; /* Full width */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Ensure the form and list are the same width */
+    min-height: 200px; /* Adjust this as needed to ensure consistent height */
+    border: 1px solid #ddd; /* Optional border for better visual separation */
+  }
+  
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.reclamation-list-header {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+.create-reclamation-button {
+    padding: 10px 20px;
+    background-color: #2DAAE1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.create-reclamation-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.reclamation-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.reclamation-list li {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reclamation-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.reclamation-list li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.reclamation-list li a:hover {
+    color: #007bff;
+}
+
+.claim-form-container {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.claim-form-container form div {
+    margin-bottom: 15px;
+}
+
+.claim-form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.claim-form-container input,
+.claim-form-container textarea,
+.claim-form-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.claim-form-container button {
+    background-color: #2DAAE1;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.claim-form-container button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.Button-icon-onlyyy {
+    font-size: 24px; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+    
+  }
+  
+  .Button-icon-only .fa {
+    display: block;
+    
+  }
+  
+  .Button-edit {
+    color: #ffffff; 
+
+  }
+  
+  .Button-edit:hover {
+    background-color: rgba(255, 193, 7, 0.2);
+  }
+  
+  .Button-delete {
+    color: #ffffff;
+
+  }
+  
+  .Button-delete:hover {
+    background-color: rgba(220, 53, 69, 0.2);
+  }
+  
+  
+  .small-btnn {
+    padding: 0.1rem 0.2rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  .action-buttons {
+    display: flex; /* Rend le conteneur des boutons flexible */
+    justify-content: right; /* Centre horizontalement les boutons dans le conteneur */
+  }
+  

@@ -1,0 +1,240 @@
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+#body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Default Card Styles */
+.favoriteCard {
+  position: relative;
+  border-radius: 20px;
+  margin: 5px;
+  width: calc((90% - 30px) / 5); /* For 5 cards per row */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: 30px;
+  left: 10%;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.favoriteCard:hover {
+  transform: scale(1.05);
+  border-radius: 15px;
+  border: 1px solid #2DAAE1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .favoriteCard {
+    width: calc((100% - 30px) / 4); /* For 4 cards per row */
+  }
+}
+
+@media (max-width: 900px) {
+  .favoriteCard {
+    width: calc((100% - 20px) / 3); /* For 3 cards per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .favoriteCard {
+    width: calc((100% - 20px) / 2); /* For 2 cards per row */
+    margin: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .favoriteCard {
+    width: 70%; /* For 1 card per row */
+    margin: 10px 0;
+  }
+}
+
+.favorite-image {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  padding: 3px;
+  background: #2DAAE1;
+  margin-bottom: 15px;
+}
+
+.favorite-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.favorite-title {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.favorite-Societe .societe {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2daae1;
+}
+
+.favorite-description {
+  font-size: 17px;
+  color: #222222;
+  margin-bottom: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.favorite-footer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: auto;
+  overflow: hidden; /* Assure que rien ne dépasse du conteneur */
+
+}
+
+.favorite-button {
+  background-color: #2DAAE1;
+  outline: none;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: #fff;
+}
+
+.favorite-button:hover {
+  background-color: #37D09C;
+}
+
+.containerr {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px; /* Réduisez l'espacement entre les boutons */
+}
+
+.favoriteDate, .favoriteDuration, .favoriteLocation {
+  font-size: 17px;
+  color: #222222;
+  margin: 4px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.deleteButton {
+  margin-top: 10px;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #F36969;
+  color: white;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.deleteButton:hover {
+  opacity: 0.8;
+}
+
+.icon-containerr {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.favorites-header {
+  padding: 1rem 2rem;
+}
+
+.favorites-header h2 {
+  cursor: default;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom: 2px solid #2DAAE1;
+  display: inline;
+  padding-bottom: 5px;
+  caret-color: transparent;
+}
+
+.button-containerr {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centre les boutons horizontalement */
+  gap: 10px; /* Ajoute de l'espace entre les boutons */
+  flex-wrap: nowrap; /* Utiliser nowrap pour garder les boutons alignés horizontalement */
+
+}
+
+.buttonP {
+  margin: 5px;
+  background-color: #2DAAE1;
+  outline: none;
+  border: none;
+  height: 40px;
+  color: #fff;
+  /* padding: initial; */
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: auto; /* Assurez-vous que la largeur est auto pour s'adapter à l'espace disponible */
+  max-width: 100px; /* Vous pouvez ajuster cette valeur pour s'adapter au conteneur */
+  flex-shrink: 1; /* Permet aux boutons de rétrécir pour rester sur une seule ligne */
+
+}
+
+.buttonP:hover {
+  background-color: #37D09C;
+}
+
+.buttonM {
+  margin: 5px;
+  background-color: #2DAAE1;
+  outline: none;
+  border: none;
+  height: 40px;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: auto; /* Assurez-vous que la largeur est auto pour s'adapter à l'espace disponible */
+  max-width: 100px; /* Vous pouvez ajuster cette valeur pour s'adapter au conteneur */
+  flex-shrink: 1; /* Permet aux boutons de rétrécir pour rester sur une seule ligne */
+
+}
+
+.buttonM:hover {
+  background-color: #F36969;
+}

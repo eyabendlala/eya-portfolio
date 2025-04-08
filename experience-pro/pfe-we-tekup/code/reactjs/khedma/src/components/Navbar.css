@@ -1,0 +1,454 @@
+.navbar {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  max-width: 1500px;
+  margin-top: 50px;
+}
+
+.nav-logo {
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  transform: scale(0.5); /* Adjust the scale factor as needed */
+  position: absolute;
+  top: 20px;
+  left: -30px;
+
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  text-align: center;
+
+}
+
+.nav-links {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+}
+
+.nav-links:hover{
+  color: #2DAAE1;
+}
+
+.nav-item {
+  line-height: 4rem;
+  margin: 1rem;
+}
+
+.nav-item:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background: transparent;
+  transition: width 0.7s ease, background-color 0.5s ease;
+}
+
+.nav-item:hover:after {
+  width: 100%;
+  background: #2DAAE1;
+}
+
+.nav-item .active {
+  color: #2DAAE1;
+}
+
+.nav-icon {
+  display: none;
+}
+
+.publier-emploi{
+  color: white;
+  border: 1px solid white;
+  display: inline-block;
+  padding: 5px 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.publier-emploi:hover{
+  background-color: white;
+  color: #2DAAE1;
+}
+
+.custom-dropdown-button {
+  background: transparent;
+  width: auto; 
+  color: white; 
+  border: none;
+}
+
+.user-dropdown-button {
+  background: transparent;
+  width: auto; 
+  color: white; 
+  border: none;
+}
+
+.custom-dropdown-button button {
+  color: white; 
+  border: none;
+  width: auto;
+}
+
+.user-dropdown-button button{
+  color: white; 
+  border: none;
+  width: auto;
+}
+
+
+.custom-dropdown-button button:hover {
+  color: white; 
+  border: none;
+}
+
+
+/* Style the Dropdown.Item items */
+.custom-dropdown-item {
+  color: #fff; /* Text color */
+  width: auto;
+}
+
+.button-login{
+  background-color: #2DAAE1;
+  color: white;
+  width: auto;
+  padding: 5px 10px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+}
+
+.button-login:hover{
+  color: white;
+}
+/* Style the active Dropdown.Item */
+.custom-dropdown-item.active {
+  background-color: #2DAAE1; /* Background color when active */
+  color: #fff; /* Text color when active */
+}
+
+.custom-dropdown-button:hover{
+  border: none;
+}
+
+.avatar1 {
+  position: relative;
+  width: 2.375rem;
+  height: 2.375rem;
+  cursor: pointer;
+}
+.avatar1 img {
+  width: 100%;
+  height: 100%;
+}
+.avatar1 .avatar-initial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #8592a3;
+  font-weight: 700;
+}
+.avatar1.avatar-online:after, .avatar1.avatar-offline:after, .avatar1.avatar-away:after, .avatar1.avatar-busy:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  box-shadow: 0 0 0 2px #fff;
+}
+.avatar1.avatar-online:after {
+  background-color: #71dd37;
+}
+.avatar1.avatar-offline:after {
+  background-color: #8592a3;
+}
+.avatar1.avatar-away:after {
+  background-color: #ffab00;
+}
+.avatar1.avatar-busy:after {
+  background-color: #ff3e1d;
+}
+
+.dropup,
+.dropend,
+.dropdown,
+.dropstart {
+  position: relative;
+}
+
+.dropdown-toggle {
+  white-space: nowrap;
+}
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.5em;
+  vertical-align: middle;
+  content: "";
+  margin-top: -0.28em;
+  width: 0.42em;
+  height: 0.42em;
+  border: 1px solid;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg);
+}
+.dropdown-toggle:empty::after {
+  margin-left: 0;
+}
+
+.navbar-expand-xl .navbar-nav .dropdown-menu {
+  position: absolute;
+}
+.navbar-nav .dropdown-menu {
+  position: static;
+}
+.dropdown-menu {
+  margin: 0.125rem 0;
+  box-shadow: 0 0.25rem 1rem rgba(161, 172, 184, 0.45);
+  -webkit-animation: dropdownAnimation 0.1s;
+  animation: dropdownAnimation 0.1s;
+}
+.dropdown-menu[data-bs-popper] {
+  top: 100%;
+  left: 0;
+  margin-top: 0.125rem;
+}
+
+.dropdown-menu-end {
+  --bs-position: end;
+}
+.dropdown-menu-end[data-bs-popper] {
+  right: 0;
+  left: auto;
+}
+.dropdown-menu {
+  margin: 0.125rem 0;
+  box-shadow: 0 0.25rem 1rem rgba(161, 172, 184, 0.45);
+  -webkit-animation: dropdownAnimation 0.1s;
+  animation: dropdownAnimation 0.1s;
+}
+.dropdown-menu-end {
+  --bs-position: end;
+}
+.dropdown-menu {
+  margin-top: 6px !important;
+  left: unset !important;
+  right: -5px !important;
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  min-width: 12rem;
+  padding: 0.3125rem 0;
+  margin: 0;
+  font-size: 0.9375rem;
+  color: #697a8d;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+}
+.dropdown-item {
+  line-height: 1.54;
+}
+.dropdown-item {
+  display: block !important;
+  width: 100%;
+  padding: 0.532rem 1.25rem !important;
+  clear: both;
+  font-weight: 400 !important;
+  color: #697a8d !important;
+  text-align: inherit;
+  white-space: nowrap !important;
+  background-color: transparent;
+  border: 0;
+}
+.dropdown-divider {
+  height: 0;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  border-top: 1px solid #d9dee3;
+}
+.dropdown-toggle.hide-arrow::before, .dropdown-toggle.hide-arrow::after,
+.dropdown-toggle-hide-arrow > .dropdown-toggle::before,
+.dropdown-toggle-hide-arrow > .dropdown-toggle::after {
+  display: none;
+}
+
+@media screen and (max-width: 1030px) {
+  .nav-menu {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    position: fixed;
+    top: 100px;
+    left: -150%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    background-color: white;
+    width: 75%;
+    border-radius: 10px;
+    min-height: 775px;
+  }
+
+  .nav-menu.active {
+    left: 0px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+    margin: 0;
+  }
+
+  .nav-item{
+    text-align:left;
+    width: auto;
+    margin: 0;
+    margin-left: 0;
+    border-bottom: 1px solid gray;
+    margin-left: 10%;
+  }
+  
+  .nav-item .active {
+    color: #2DAAE1;
+    border: none;
+  }
+  .nav-links {
+    width: 100%;
+    color: black;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-icon {
+    display: block;
+    margin-top: 50px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #2DAAE1;
+  }
+ 
+  .custom-dropdown-button button {
+    color: black;
+    margin: 0;
+    padding: 0;
+  }
+
+  .custom-dropdown-button button:hover {
+    color: black;
+    border: none;
+}
+
+  .nav-item span{
+    font-weight: bold;
+  }
+
+  .publier-emploi{
+    color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    font-weight: bold;
+  }
+
+  .button-login{
+    color: black;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    width: 99%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 2px;
+  }
+
+  .button-login span{
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .nav-title{
+    text-align: center;
+    margin-top: 15px;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid gray;
+  }
+
+  ul.nav-menu.active{
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .authUser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user-dropdown-button, .user-dropdown-button button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .dropdown-menu.show{
+    display: block;
+    margin-right: 50px;
+  }
+
+  .avatar1 {
+    position: relative;
+    width: 3.175rem;
+    height: 3.175rem;
+    cursor: pointer;
+  }
+
+  .container .testspan{
+    margin-top: 30px;
+    color: black !important;
+  }
+}

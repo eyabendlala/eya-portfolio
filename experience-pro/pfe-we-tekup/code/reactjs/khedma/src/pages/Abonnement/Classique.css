@@ -1,0 +1,44 @@
+.containerabon{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 480px;
+    height: 150px;
+    background-color: transparent; /* Remove the white background */
+    margin-top: 50px;
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+    margin-bottom: 5px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card h3 {
+    font-size: 24px;
+    padding-right: 20px;
+}
+
+.card h5 {
+    font-size: 18px; /* Remove the extra font-size declaration */
+}
+
+.buttoncheckout {
+    font-size: 18px;
+    padding: 10px;
+    background-color: #73dbf8;
+    color: white;
+    border: none;
+    margin-left: 50px;
+    width: 482px;
+    box-shadow: 1px 2px 3px rgba(217, 14, 14, 0.2);
+    
+}
+.containerabon .card .buttoncheckout:hover{
+    background-color: #73dbf8;
+    color: white;
+    border: none;
+
+}
+
+
+  /* ... (rest of your styles) */
+  
