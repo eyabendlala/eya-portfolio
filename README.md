@@ -16,11 +16,11 @@ Ce dépôt est divisé en plusieurs sections pour faciliter la navigation :
 - **Projets Freelance** : Applications et solutions créées en freelance.
 
 ## 📂 Structure du dépôt
-- **[Projets Académiques](./academiques)**  
+- **[Projets Académiques](./projets-academiques)**  
   Projets réalisés en collaboration pendant mes études.
 
-- **[Projet de Fin d'Études](./final-studies)**  
-  Détails sur mon projet de fin d’études et ma contribution.
+- **[Expérience Professionnelle](./experience-pro)**  
+    Cette section présente mes expériences en entreprise, à commencer par mon projet de fin d’études réalisé chez We Tekup, ainsi que mes contributions actuelles dans le cadre professionnel.
 
 - **[Projets Freelance](./freelance)**  
   Solutions créées lors de projets freelance, incluant une application TripPlanner et un pipeline CI/CD.
