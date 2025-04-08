@@ -1,0 +1,58 @@
+# === Java / Spring Boot ===
+target/
+*.class
+*.jar
+*.war
+*.log
+*.iml
+*.ipr
+*.iws
+.idea/
+*.db
+*.h2.db
+
+# === Node / Angular ===
+node_modules/
+dist/
+tmp/
+.env
+application.properties
+.angular/
+
+# === OS Specific ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Logs and IDEs ===
+*.log
+.vscode/
+*.swp
+*.swo
+
+# === Build tools ===
+/build/
+/out/
+/bin/
+
+# === JetBrains IDEs ===
+.idea/
+*.iml
+
+# === Eclipse / NetBeans / Other IDEs ===
+*.classpath
+*.project
+*.settings/
+.nb-gradle/
+
+# === Env & Secrets ===
+.env
+.env.*
+
+# === Others ===
+package-lock.json
+yarn.lock
+npm-debug.log*
+/coverage
+/test-output
+
