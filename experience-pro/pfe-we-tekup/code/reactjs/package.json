@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "react-router": "^6.13.0",
-    "react-router-dom": "^6.13.0",
-    "swiper": "^10.0.4"
-  }
-}
