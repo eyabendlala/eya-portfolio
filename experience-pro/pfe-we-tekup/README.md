@@ -1,3 +1,6 @@
+> ⚠️ **Note importante :** Le code source de ce projet est **confidentiel** et ne peut être consulté publiquement. Seules les interfaces et les fonctionnalités sont exposées à des fins de présentation.
+
+
 # 🎓 Projet de Fin d'Études – Plateforme de Recrutement (We Tekup)
 
 Ce projet a été réalisé dans le cadre de mon stage de fin d’études au sein de l’entreprise **We Tekup**.  
